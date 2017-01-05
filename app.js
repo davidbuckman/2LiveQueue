@@ -1,6 +1,10 @@
 
 /**
- * Module dependencies.
+ * 
+ * 2LiveQueue
+ * 
+ * by David Buckman
+ * 
  */
 
 var express = require('express')
