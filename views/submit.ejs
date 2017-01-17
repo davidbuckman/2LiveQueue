@@ -11,7 +11,6 @@
     		$(function() {
 	    		$('#word_form').submit(function(event){
 					event.preventDefault();
-					console.log("a");
 					if ($("#word_text").val() != "") {
 		    			$.get('/enqueue', { word : $("#word_text").val() }, function() {
 		    				$("#word_text").val("");

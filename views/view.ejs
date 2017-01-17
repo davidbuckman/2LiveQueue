@@ -9,7 +9,7 @@
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"> </script>
     	<script>
     		var nextWord = function() {
-    			$.get('/dequeue', function(word) {
+    			$.get('/dequeue', {'level' : $("#level_selector").val()}, function(word) {
     				if (!word) {
     					$("#word").text("There are no more words in the queue.");
     				} else {
@@ -21,11 +21,13 @@
     		$(function() {
 			    nextWord();
 			
-				$( document ).keydown(function( event ) {
-				  	if ( event.which == 32 || event.which == 13 ) {
-				   		if (!$("#submit_btn").is(":focus")) {
+				$(document).keydown(function(event) {
+				  	if (event.which == 32 || event.which == 13) {
+				   		if (!$("#submit_btn").is(":focus") && !$("#level_selector").is(":focus")) {
 				   			nextWord();
 				   		}
+				  	} else if (event.which == 27) {
+				  		document.activeElement.blur();
 				  	}
 				});
 				
@@ -50,6 +52,14 @@
 		        <form id="next_form">
 	            	<button type="submit" id="submit_btn" class="btn btn-lg btn-primary" style="display: block; margin: auto; width: 50%;">Next</button>
 	            </form>
+	            <div style="height: 20px"></div>
+	            <select class="form-control" id="level_selector" style="width: fit-content; margin: auto;">
+				    <option value="level1">Level 1</option>
+				    <option value="level2">Level 2</option>
+				    <option value="level3">Level 3</option>
+				    <option value="level4">Level 4</option>
+				    <option value="level5">Level 5</option>
+				</select>
 	            <div style="height: 20px"></div>
 	        </div>
 		</div>

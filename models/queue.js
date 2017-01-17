@@ -16,19 +16,19 @@ Adapted by David Buckman for 2LiveQueue
 /* Creates a new queue. A queue is a first-in-first-out (FIFO) data structure -
  * items are added to the end of the queue and removed from the front.
  */
-function Queue(){
+function Queue() {
 
     // initialise the queue and offset
     var queue  = [];
     var offset = 0;
 
     // Returns the length of the queue.
-    this.getLength = function(){
+    this.getLength = function() {
         return (queue.length - offset);
     };
 
     // Returns true if the queue is empty, and false otherwise.
-    this.isEmpty = function(){
+    this.isEmpty = function() {
         return (queue.length == 0);
     };
 
@@ -36,14 +36,14 @@ function Queue(){
      *
      * item - the item to enqueue
      */
-    this.enqueue = function(item){
+    this.enqueue = function(item) {
         queue.push(item);
     };
 
     /* Dequeues an item and returns it. If the queue is empty, the value
      * 'undefined' is returned.
      */
-    this.dequeue = function(){
+    this.dequeue = function() {
 
         // if the queue is empty, return immediately
         if (queue.length == 0) { return undefined; }
@@ -65,7 +65,7 @@ function Queue(){
     /* Returns the item at the front of the queue (without dequeuing it). If the
      * queue is empty then undefined is returned.
      */
-    this.peek = function(){
+    this.peek = function() {
         return (queue.length > 0 ? queue[offset] : undefined);
     };
 
