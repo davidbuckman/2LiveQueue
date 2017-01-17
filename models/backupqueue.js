@@ -17,7 +17,7 @@ function shuffleArray(array) {
 function BackupQueue() {
     
     var level_lists = {
-            'level1' : require('../resources/test_wordlist.json').slice(),
+            'level1' : require('../resources/level1_wordlist.json').slice(),
             'level2' : require('../resources/level2_wordlist.json').slice(),
             'level3' : require('../resources/level3_wordlist.json').slice(),
             'level4' : require('../resources/level4_wordlist.json').slice(),
